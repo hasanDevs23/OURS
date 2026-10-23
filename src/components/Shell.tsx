@@ -17,7 +17,7 @@ export function Header() {
     <header className="sticky top-0 z-40 border-b bg-background backdrop-blur-xl">
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between gap-4 px-5">
         <Link to="/" aria-label="Ours home" className="flex h-14 w-28 items-center justify-center">
-          <img src={logo.url} alt="Ours" className="h-full w-full object-contain mix-blend-screen" />
+          <img src={logo} alt="Ours" className="h-full w-full object-contain mix-blend-screen" />
         </Link>
         <nav className="hidden gap-8 md:flex">
           {nav.map((n) => (
