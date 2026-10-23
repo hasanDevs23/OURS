@@ -66,7 +66,7 @@ export const products: Product[] = [
   { id: "butterfly-cardigan-white", name: "Butterfly Knit Cardigan — White", price: 799, category: "Cardigans", fit: "cardigan", image: "/cardigan_10.jpeg", description: "White chunky button-front knit with pink butterfly appliqués and balloon sleeves.", sizes: ["M", "L", "XL", "XXL"] },
   { id: "butterfly-cardigan-black", name: "Butterfly Knit Cardigan — Black", price: 799, category: "Cardigans", fit: "cardigan", image: "/cardigan_11.jpeg", description: "Black chunky button-front knit with red butterfly appliqués and balloon sleeves.", sizes: ["M", "L", "XL", "XXL"] },
   
-  { id: "dimension-hoodie-jeans-bundle", name: "Dimension Hoodie + Jeans Bundle", price: 1299, category: "Offers", fit: "offer", featuredOffer: true, image: "/ds_12.jpeg", description: "White Dimension graphic hoodie paired with black wide-leg jeans.", sizes: ["M", "L", "XL", "XXL"] },
+  { id: "dimension-hoodie-jeans-bundle", name: "Dimension Hoodie + Jeans Bundle", price: 1299, category: "Offers", fit: "offer", featuredOffer: true, image: "/offer_1.jpeg", description: "White Dimension graphic hoodie paired with black wide-leg jeans.", sizes: ["M", "L", "XL", "XXL"] },
 ];
 
 export const dropShoulder = products.filter((p) => p.fit === "drop");
