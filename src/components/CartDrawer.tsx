@@ -64,8 +64,10 @@ export function CartDrawer() {
       ? items.map((i) => `${lookup(i.id)?.name || i.id} (Qty: ${i.qty}${i.size ? `, Size: ${i.size}` : ""})`).join(" ; ")
       : "";
 
-    // 3. Extract primary product image URL for spreadsheet preview
-    const primaryImage = items.length > 0 ? lookup(items[0].id)?.image || "" : "";
+    // 3. Extract all product image URLs from cart items
+    const allImages = items
+      .map((i) => lookup(i.id)?.image)
+      .filter((img): img is string => Boolean(img));
 
     const payload = {
       name: form.name.trim(),
@@ -74,7 +76,8 @@ export function CartDrawer() {
       size: finalSize,
       items: itemsSummary,
       total: formatPrice(total),
-      imageUrl: primaryImage,
+      imageUrl: allImages.join(", "),
+      imageUrls: allImages,
     };
 
     try {
