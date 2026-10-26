@@ -43,7 +43,12 @@ function Index() {
       <section className="pt-20">
         <div className="mx-auto mb-10 flex max-w-7xl items-end justify-between px-5">
           <h2 className="font-display text-4xl font-black uppercase md:text-7xl">New <span className="chrome-text">In</span></h2>
-          <Link to="/products" className="text-xs uppercase tracking-widest text-muted-foreground hover:text-foreground">View all →</Link>
+          <Link 
+            to="/products" 
+            className="chrome-bg inline-flex items-center justify-center rounded-full px-6 py-2.5 font-display text-xs font-black uppercase tracking-widest text-black shadow-lg transition-transform hover:scale-105 active:scale-95"
+          >
+            View All →
+          </Link>
         </div>
         <ProductGrid items={products.slice(0, 4)} />
       </section>
