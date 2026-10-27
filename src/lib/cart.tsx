@@ -38,6 +38,20 @@ export function CartProvider({ children }: { children: ReactNode }) {
       if (f) return prev.map((i) => (i === f ? { ...i, qty: i.qty + 1 } : i));
       return [...prev, { id, size, qty: 1 }];
     });
+
+  
+    if (typeof window !== 'undefined' && (window as any).fbq) {
+      const p = lookup(id);
+      (window as any).fbq('track', 'AddToCart', {
+        content_ids: [id],
+        content_name: p?.name || id,
+        content_type: 'product',
+        value: p?.price ?? 0,
+        currency: 'BDT', 
+      });
+    }
+    // ----------------------------
+
     setOpen(true);
   };
   const setQty = (id: string, size: string, qty: number) =>

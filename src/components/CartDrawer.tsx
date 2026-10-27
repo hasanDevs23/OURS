@@ -88,6 +88,18 @@ export function CartDrawer() {
         body: JSON.stringify(payload),
       });
 
+      // Meta Pixel Purchase Conversion Event
+      if (typeof window !== 'undefined' && (window as any).fbq) {
+        (window as any).fbq('track', 'Purchase', {
+          currency: 'BDT',
+          value: total,
+          contents: items.map((i) => ({
+            id: i.id,
+            quantity: i.qty,
+          })),
+        });
+      }
+
       clear();
       setForm({ name: "", address: "", phone: "", size: "", hoodieSize: "", pantsSize: "" });
       setStep("done");
