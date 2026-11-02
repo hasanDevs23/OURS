@@ -1,26 +1,42 @@
 import { useEffect, useState } from "react";
-import { formatPrice, type Product } from "@/lib/products";
+import { formatPrice, type Product, products } from "@/lib/products";
 import { chartsForFit } from "@/lib/sizeCharts";
 import { SizeChartModal } from "@/components/SizeChart";
 import { useCart } from "@/lib/cart";
 import { Button } from "@/components/ui/button";
 
-export function FeaturedOffer({ product }: { product: Product }) {
-  const [active, setActive] = useState(false);
+export function FeaturedOffer() {
+  const featuredItems = products.filter((p) => p.featuredOffer);
+  const [activeProduct, setActiveProduct] = useState<Product | null>(null);
+
+  if (featuredItems.length === 0) return null;
+
   return (
-    <section className="border-b bg-muted/20">
-      <div className="mx-auto max-w-7xl px-5 py-6 md:py-10">
-        <img src={product.image} alt={product.name} fetchPriority="high" className="mx-auto aspect-square max-h-[65vh] w-full object-contain" />
-        <div className="mx-auto mt-5 flex max-w-2xl flex-wrap items-center justify-between gap-4">
-          <div>
-            <p className="text-xs uppercase text-muted-foreground">Featured offer</p>
-            <h2 className="chrome-text font-display text-xl font-bold md:text-2xl">{product.name}</h2>
-            <p className="mt-2 font-display font-bold">{formatPrice(product.price)}</p>
-          </div>
-          <Button onClick={() => setActive(true)} className="chrome-bg font-display font-bold">Shop offer →</Button>
+    <section className="border-b bg-muted/20 py-10">
+      <div className="mx-auto max-w-7xl px-5">
+        <div className="mb-8 text-center">
+          <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">Featured offers & new drops</p>
+          <h2 className="chrome-text font-display text-3xl font-black uppercase md:text-5xl mt-2">Curated Highlights</h2>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {featuredItems.map((product) => (
+            <div key={product.id} className="chrome-border flex flex-col justify-between rounded-lg bg-background/50 p-4 transition hover:glow">
+              <div>
+                <img src={product.image} alt={product.name} loading="lazy" className="mx-auto aspect-square w-full object-contain rounded-md bg-muted" />
+                <div className="mt-4">
+                  <p className="text-[10px] uppercase text-muted-foreground tracking-widest">{product.category}</p>
+                  <h3 className="chrome-text font-display text-base font-bold uppercase mt-1">{product.name}</h3>
+                  <p className="mt-2 font-display font-bold text-sm">
+                    {formatPrice(product.price)} {product.oldPrice && <s className="ml-1 text-xs text-muted-foreground">{formatPrice(product.oldPrice)}</s>}
+                  </p>
+                </div>
+              </div>
+              <Button onClick={() => setActiveProduct(product)} className="chrome-bg font-display font-bold w-full mt-6">Shop offer →</Button>
+            </div>
+          ))}
         </div>
       </div>
-      {active && <ProductInsight product={product} onClose={() => setActive(false)} />}
+      {activeProduct && <ProductInsight product={activeProduct} onClose={() => setActiveProduct(null)} />}
     </section>
   );
 }
@@ -78,7 +94,6 @@ export function ProductSection({
 }
 
 export function ProductGrid({ items }: { items: Product[] }) {
-
   const [active, setActive] = useState<Product | null>(null);
   return (
     <>
