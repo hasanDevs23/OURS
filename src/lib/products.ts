@@ -48,9 +48,9 @@ export const products: Product[] = [
   { id: "dimension-white-drop", name: "Dimension Drop Hoodie — White", price: 1050, category: "Drop Shoulder", fit: "drop", image: "/ds_12.jpeg", description: "White drop-shoulder hoodie with a red-and-black Dimension back graphic and matching sleeve prints.", sizes: ["M", "L", "XL"] },
   { id: "dimension-black-drop", name: "Dimension Drop Hoodie — Black", price: 1050, category: "Drop Shoulder", fit: "drop", image: "/ds_13.jpeg", description: "Black drop-shoulder hoodie with a red Dimension back graphic, white lettering and matching sleeve prints.", sizes: ["M", "L", "XL"] },
   
-  // --- Featured & Discounted Drop Shoulders (ds_14 & ds_15) ---
-  { id: "talwindar-skull-drop", name: "Talwindar Skull Drop Hoodie", price: 899, oldPrice: 1050, featuredOffer: true, category: "Drop Shoulder", fit: "drop", image: "/ds_14.jpeg", description: "Black drop-shoulder fleece with a detailed blue skull, bandana graphic and celestial star accents across the back.", sizes: ["M", "L", "XL"] },
-  { id: "ryu-dragon-drop", name: "Ryu Dragon Drop Hoodie", price: 899, oldPrice: 1050, featuredOffer: true, category: "Drop Shoulder", fit: "drop", image: "/ds_15.jpeg", description: "Black drop-shoulder fleece featuring an intricate white Japanese dragon graphic and 'Born To Be Legend' lettering.", sizes: ["M", "L", "XL"] },
+  // --- Featured & Discounted Drop Shoulders (ds_14 & ds_15: 1150 -> 999 BDT) ---
+  { id: "talwindar-skull-drop", name: "Talwindar Skull Drop Hoodie", price: 999, oldPrice: 1150, featuredOffer: true, category: "Drop Shoulder", fit: "drop", image: "/ds_14.jpeg", description: "Black drop-shoulder fleece with a detailed blue skull, bandana graphic and celestial star accents across the back.", sizes: ["M", "L", "XL"] },
+  { id: "ryu-dragon-drop", name: "Ryu Dragon Drop Hoodie", price: 999, oldPrice: 1150, featuredOffer: true, category: "Drop Shoulder", fit: "drop", image: "/ds_15.jpeg", description: "Black drop-shoulder fleece featuring an intricate white Japanese dragon graphic and 'Born To Be Legend' lettering.", sizes: ["M", "L", "XL"] },
   
   // --- New Product ds_16 (Standard 1050 BDT, No Discount) ---
   { id: "ferrari-racing-drop", name: "Ferrari Racing Drop Shoulder Hoodie — Black", price: 1050, category: "Drop Shoulder", fit: "drop", image: "/ds_16.jpeg", description: "Black drop-shoulder fleece featuring bold racing graphics and sponsor accents.", sizes: ["M", "L", "XL"] },
