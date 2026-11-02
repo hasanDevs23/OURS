@@ -35,6 +35,10 @@ export const products: Product[] = [
   { id: "dimension-white-drop", name: "Dimension Drop Hoodie — White", price: 899, category: "Drop Shoulder", fit: "drop", image: "/ds_12.jpeg", description: "White drop-shoulder hoodie with a red-and-black Dimension back graphic and matching sleeve prints.", sizes: ["M", "L", "XL"] },
   { id: "dimension-black-drop", name: "Dimension Drop Hoodie — Black", price: 899, category: "Drop Shoulder", fit: "drop", image: "/ds_13.jpeg", description: "Black drop-shoulder hoodie with a red Dimension back graphic, white lettering and matching sleeve prints.", sizes: ["M", "L", "XL"] },
   
+  // --- NEW HOODIES ---
+  { id: "talwindar-skull-drop", name: "Talwindar Skull Drop Hoodie", price: 899, category: "Drop Shoulder", fit: "drop", image: "/ds_14.jpeg", description: "Black drop-shoulder fleece with a detailed blue skull, bandana graphic and celestial star accents across the back.", sizes: ["M", "L", "XL"] },
+  { id: "ryu-dragon-drop", name: "Ryu Dragon Drop Hoodie", price: 899, category: "Drop Shoulder", fit: "drop", image: "/ds_15.jpeg", description: "Black drop-shoulder fleece featuring an intricate white Japanese dragon graphic and 'Born To Be Legend' lettering.", sizes: ["M", "L", "XL"] },
+
   { id: "raven-oath-black", name: "Raven Oath Hoodie — Black", price: 799, category: "Regular Fit", fit: "regular", image: "/reg_1.jpeg", description: "Black fleece with a Norse raven, knotwork medallion and the Fear Not Death oath printed in pale grey across the back.", sizes: ["M", "L", "XL", "XXL"] },
   { id: "raven-oath-white", name: "Raven Oath Hoodie — White", price: 799, category: "Regular Fit", fit: "regular", image: "/reg_2.jpeg", description: "White fleece with the Norse raven, knotwork medallion and Fear Not Death oath printed in navy across the back.", sizes: ["M", "L", "XL", "XXL"] },
   { id: "lowkey-speed-white", name: "Lowkey Speed Hoodie — White", price: 799, category: "Regular Fit", fit: "regular", image: "/reg_3.jpeg", description: "White fleece with a widebody GT car, Lowkey Street Aesthetics script and SPEED lettering in navy across the back.", sizes: ["M", "L", "XL", "XXL"] },

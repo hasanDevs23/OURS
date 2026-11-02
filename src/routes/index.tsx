@@ -17,6 +17,17 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
+  // Grab the 2 new items specifically for the landing page header grid
+  const newLandingItems = products.filter(
+    (p) => p.id === "talwindar-skull-drop" || p.id === "ryu-dragon-drop"
+  );
+  
+  // Combine the 2 new items with 2 existing items so the landing grid remains a full 4-card section
+  const landingGridProducts = [
+    ...newLandingItems,
+    ...products.filter((p) => p.id !== "talwindar-skull-drop" && p.id !== "ryu-dragon-drop").slice(0, 2)
+  ];
+
   return (
     <>
       {featuredOffer && <FeaturedOffer product={featuredOffer} />}
@@ -50,7 +61,8 @@ function Index() {
             View All →
           </Link>
         </div>
-        <ProductGrid items={products.slice(0, 4)} />
+        {/* Only the landing page will show the 2 new drop shoulder hoodies first */}
+        <ProductGrid items={landingGridProducts} />
       </section>
     </>
   );
